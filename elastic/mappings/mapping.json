@@ -1,0 +1,117 @@
+{
+    "products": {
+        "mappings": {
+            "properties": {
+                "brand": {
+                    "properties": {
+                        "id": {
+                            "type": "keyword"
+                        },
+                        "name": {
+                            "type": "text"
+                        },
+                        "slug": {
+                            "type": "keyword"
+                        }
+                    }
+                },
+                "categories": {
+                    "properties": {
+                        "id": {
+                            "type": "keyword"
+                        },
+                        "name": {
+                            "type": "text"
+                        }
+                    }
+                },
+                "click": {
+                    "type": "integer"
+                },
+                "created_at": {
+                    "type": "date"
+                },
+                "discount": {
+                    "type": "float"
+                },
+                "discount_difference": {
+                    "type": "float"
+                },
+                "discounted_price": {
+                    "type": "float"
+                },
+                "is_exist": {
+                    "type": "boolean"
+                },
+                "price": {
+                    "type": "float"
+                },
+                "slug": {
+                    "type": "keyword"
+                },
+                "tags": {
+                    "properties": {
+                        "id": {
+                            "type": "keyword"
+                        },
+                        "name": {
+                            "type": "text"
+                        },
+                        "picture": {
+                            "type": "keyword"
+                        }
+                    }
+                },
+                "title": {
+                    "type": "text",
+                    "fields": {
+                        "auto": {
+                            "type": "text",
+                            "analyzer": "auto_complete",
+                            "search_analyzer": "autocomplete_search"
+                        },
+                        "raw": {
+                            "type": "keyword"
+                        },
+                        "rev": {
+                            "type": "text",
+                            "analyzer": "reverse"
+                        },
+                        "shin": {
+                            "type": "text",
+                            "analyzer": "shingle"
+                        },
+                        "suggest": {
+                            "type": "search_as_you_type",
+                            "doc_values": false,
+                            "max_shingle_size": 3
+                        },
+                        "suggest_completion": {
+                            "type": "completion",
+                            "analyzer": "simple",
+                            "preserve_separators": true,
+                            "preserve_position_increments": true,
+                            "max_input_length": 50
+                        }
+                    }
+                },
+                "vendor": {
+                    "properties": {
+                        "id": {
+                            "type": "keyword"
+                        },
+                        "name": {
+                            "type": "text"
+                        },
+                        "slug": {
+                            "type": "keyword"
+                        }
+                    }
+                },
+                "view": {
+                    "type": "integer"
+                }
+            }
+        }
+    }
+}

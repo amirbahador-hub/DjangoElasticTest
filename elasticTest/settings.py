@@ -37,6 +37,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'core',
+    'elastic',
 ]
 
 MIDDLEWARE = [
@@ -118,3 +120,28 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
 
 STATIC_URL = '/static/'
+# ES_ACTIVE = True
+# ElasticSearch configuration
+ES_ACTIVE = True
+ES_HOST = "localhost"
+ES_AUTH = ""
+ES_PRODUCTS_INDEX = "products"
+ES_INDEX = ES_PRODUCTS_INDEX
+ES_INDEX_SETTINGS = {
+    'number_of_shards': 1,
+    'number_of_replicas': 0,
+}
+
+ES_CONNECTIONS = {
+    'default': {
+        'hosts': [
+            {
+                'host': ES_HOST,
+                'http_auth': ES_AUTH,
+                'verify_certs': False,
+                # 'use_ssl':  'True',
+                'port': '9200',
+            }
+        ]
+    }
+}
