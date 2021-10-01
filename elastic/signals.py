@@ -4,8 +4,8 @@ from django.utils.text import slugify
 # from api.models import Product, VendorProducts, VendorProductsStatus, Category, Vendor, Brand
 
 
-@receiver(pre_save, sender=Product)
-def update_elastic(sender, instance, *args, **kwargs):
-    if instance.slug:
-        pass
+# @receiver(pre_save, sender=Product)
+# def update_elastic(sender, instance, *args, **kwargs):
+#     if instance.slug:
+#         pass
 
